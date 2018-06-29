@@ -62,6 +62,13 @@ public class Hotel {
         room.addPeopleToRoom(guest);
     }
 
+    public void checkOut(RoomType roomtype){
+        room = findBedRoom(roomtype);
+        room.removePeopleFromRoom();
+    }
+
+//    public
+
 
 //    public void canCheckPeopleIntoRooms(Guest guest) {
 //        addPeopleToRoom(guest);

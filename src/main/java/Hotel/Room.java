@@ -29,5 +29,9 @@ public abstract class Room {
 
     }
 
+    public void removePeopleFromRoom(){
+        this.guestList.clear();
+    }
+
 
 }
