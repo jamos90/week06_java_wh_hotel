@@ -83,7 +83,6 @@ public class HotelTest {
         hotel.addPersonToRoom(guest,RoomType.DOUBLE_BEDROOM);
         hotel.checkOut(RoomType.DOUBLE_BEDROOM);
         assertEquals(0,bedroom.getOccupants());
-
     }
 
 }

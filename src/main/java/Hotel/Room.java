@@ -9,7 +9,7 @@ public abstract class Room {
     protected int capacity;
     protected ArrayList<Guest> guestList;
 
-    public Room(int capacity){
+    public Room(int capacity) {
         this.capacity = capacity;
         this.guestList = new ArrayList<>();
 
@@ -24,14 +24,23 @@ public abstract class Room {
         return this.guestList.size();
     }
 
-    public void addPeopleToRoom(Guest guest){
+    public void addPeopleToRoom(Guest guest) {
         this.guestList.add(guest);
 
     }
 
-    public void removePeopleFromRoom(){
+    public void removePeopleFromRoom() {
         this.guestList.clear();
     }
 
-
+    public Guest roomOccupants() {
+        for (Guest guests : guestList) {
+            if (guests != null);
+        }
+        return guests;
+    }
 }
+
+
+
+
