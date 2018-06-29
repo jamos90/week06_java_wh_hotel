@@ -1,3 +1,5 @@
+package Rooms;
+
 public enum RoomType {
     SINGLE_BEDROOM(1),
     DOUBLE_BEDROOM(2),

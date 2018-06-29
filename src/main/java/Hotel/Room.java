@@ -1,3 +1,7 @@
+package Hotel;
+
+import Hotel.Guest;
+
 import java.util.ArrayList;
 
 public abstract class Room {

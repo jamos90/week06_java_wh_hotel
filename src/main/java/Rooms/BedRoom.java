@@ -1,4 +1,6 @@
-public class BedRoom extends Room {
+package Rooms;
+
+public class BedRoom extends Hotel.Room {
     private int roomNumber;
     private int nightlyRate;
     private RoomType roomType;
