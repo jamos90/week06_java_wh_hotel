@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HotelJavaWeekendHw.iml" filepath="$PROJECT_DIR$/.idea/modules/HotelJavaWeekendHw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HotelJavaWeekendHw_main.iml" filepath="$PROJECT_DIR$/.idea/modules/HotelJavaWeekendHw_main.iml" group="HotelJavaWeekendHw" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HotelJavaWeekendHw_test.iml" filepath="$PROJECT_DIR$/.idea/modules/HotelJavaWeekendHw_test.iml" group="HotelJavaWeekendHw" />
     </modules>
   </component>
 </project>
