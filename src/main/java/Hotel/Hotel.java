@@ -1,29 +1,32 @@
 package Hotel;
 
+import Rooms.BedRoom;
+import Rooms.ConferenceRoom;
 import Rooms.RoomType;
 
 import java.util.ArrayList;
 
 public class Hotel {
-    protected ArrayList<RoomType> singleRooms;
-    protected ArrayList<RoomType> conferenceRooms;
-    protected ArrayList<RoomType> doubleRooms;
-    protected ArrayList<RoomType> dinningRooms;
+    protected ArrayList<BedRoom> BedRooms;
+    protected ArrayList<ConferenceRoom> conferenceRooms;
+//    protected ArrayList<> dinningRooms;
 
     public Hotel(){
-        this.singleRooms = new ArrayList<>();
+        this.BedRooms = new ArrayList<>();
         this.conferenceRooms = new ArrayList<>();
-        this.doubleRooms = new ArrayList<>();
-        this.dinningRooms = new ArrayList<>();
 
     }
 
+//
+//    public void addRoom(RoomType room) {
+//        this.BedRooms.add;
+//    }
 
-    public int getSingleRoomCount() {
-        return this.singleRooms.size();
+    public int getBedroomCount() {
+        return this.BedRooms.size();
     }
 
-    public void addRoom(RoomType room_type) {
-        this.singleRooms.add(room_type);
+    public int getConferenceRoomCount() {
+        return this.conferenceRooms.size();
     }
 }

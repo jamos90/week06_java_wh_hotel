@@ -23,4 +23,6 @@ public abstract class Room {
     public int getOccupants() {
         return this.guestList.size();
     }
+
+
 }

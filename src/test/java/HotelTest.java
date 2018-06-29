@@ -15,16 +15,21 @@ public class HotelTest {
     }
 
     @Test
-    public void hotelHasNoSingleRooms(){
-        assertEquals(0, hotel.getSingleRoomCount());
+    public void hotelHasNoBedRooms(){
+        assertEquals(0, hotel.getBedroomCount());
     }
 
     @Test
-    public void hotelCanAddRooms(){
-        hotel.addRoom(RoomType.SINGLE_BEDROOM);
-        assertEquals(1, hotel.getSingleRoomCount());
+    public void hotelHasNoConferenceRooms(){
+        assertEquals(0, hotel.getConferenceRoomCount());
     }
-
-    @Test
-    public
+//
+//    @Test
+//    public void hotelCanAddRooms(){
+//        hotel.addRoom(RoomType.SINGLE_BEDROOM);
+//        assertEquals(1, hotel.getSingleRoomCount());
+//    }
+//
+//    @Test
+//    public
 }
