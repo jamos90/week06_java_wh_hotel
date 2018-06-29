@@ -22,4 +22,8 @@ public class Hotel {
     public int getSingleRoomCount() {
         return this.singleRooms.size();
     }
+
+    public void addRoom(RoomType room_type) {
+        this.singleRooms.add(room_type);
+    }
 }
