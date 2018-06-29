@@ -3,7 +3,7 @@ package Rooms;
 public class BedRoom extends Hotel.Room {
     private int roomNumber;
     private int nightlyRate;
-    private RoomType roomType;
+    public RoomType roomType;
 
     public BedRoom(int capacity, int roomNumber, int nightlyRate, RoomType roomType){
         super(capacity);

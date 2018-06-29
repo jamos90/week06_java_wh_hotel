@@ -3,6 +3,7 @@ package Hotel;
 import Rooms.BedRoom;
 import Rooms.ConferenceRoom;
 import Rooms.RoomType;
+import Hotel.Room;
 
 import java.util.ArrayList;
 
@@ -10,10 +11,12 @@ public class Hotel {
     protected ArrayList<BedRoom> bedRooms;
     protected ArrayList<ConferenceRoom> conferenceRooms;
 //    protected ArrayList<> dinningRooms;
+    protected Room room;
 
-    public Hotel(){
+    public Hotel() {
         this.bedRooms = new ArrayList<>();
         this.conferenceRooms = new ArrayList<>();
+
 
     }
 
@@ -42,4 +45,28 @@ public class Hotel {
     public BedRoom getBedroom(BedRoom bedroom) {
         return this.bedRooms.get(0);
     }
+
+    public BedRoom findBedRoom(RoomType roomtype) {
+        BedRoom availableroom = null;
+        for (BedRoom bedroom : bedRooms)
+            if (bedroom.getRoomType() == roomtype) {
+            availableroom = bedroom;
+            }
+        return availableroom;
+
+    }
+
+    public void addPersonToRoom(Guest guest, RoomType roomtype)
+    {
+        room = findBedRoom(roomtype);
+        room.addPeopleToRoom(guest);
+    }
+
+
+//    public void canCheckPeopleIntoRooms(Guest guest) {
+//        addPeopleToRoom(guest);
+////
+//    }
+
+
 }

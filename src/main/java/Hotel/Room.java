@@ -24,5 +24,10 @@ public abstract class Room {
         return this.guestList.size();
     }
 
+    public void addPeopleToRoom(Guest guest){
+        this.guestList.add(guest);
+
+    }
+
 
 }
