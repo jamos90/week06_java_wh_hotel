@@ -60,9 +60,9 @@ public class BedRoomTest {
     }
 
     @Test
-    public void findGuest(){
+    public void findGuest() {
         bedRoom.addPeopleToRoom(guest);
-        assertEquals(guest,bedRoom.findGuests());
+        assertEquals(guest, bedRoom.roomOccupants());
     }
 
 

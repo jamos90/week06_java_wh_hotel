@@ -34,10 +34,13 @@ public abstract class Room {
     }
 
     public Guest roomOccupants() {
+        Guest guestsInRoom = null;
         for (Guest guests : guestList) {
-            if (guests != null);
+            if (guests != null){
+                guestsInRoom = guests;
+            }
         }
-        return guests;
+        return guestsInRoom;
     }
 }
 
