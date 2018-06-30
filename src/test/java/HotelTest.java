@@ -66,13 +66,11 @@ public class HotelTest {
     }
 
     @Test
-    public void canCheckPeopleInandOutOfRooms(){
+    public void canCheckPeopleInToRooms(){
         hotel.addRoom(bedroom);
         hotel.findBedRoom(RoomType.DOUBLE_BEDROOM);
         hotel.addPersonToRoom(guest,RoomType.DOUBLE_BEDROOM);
         assertEquals(1, bedroom.getOccupants());
-        hotel.checkOut(RoomType.DOUBLE_BEDROOM);
-        assertEquals(0,bedroom.getOccupants());
 
     }
 
@@ -83,6 +81,24 @@ public class HotelTest {
         hotel.addPersonToRoom(guest,RoomType.DOUBLE_BEDROOM);
         hotel.checkOut(RoomType.DOUBLE_BEDROOM);
         assertEquals(0,bedroom.getOccupants());
+    }
+
+    @Test
+    public void canSeeWhoIsInRoom(){
+        hotel.addRoom(bedroom);
+        hotel.findBedRoom(RoomType.DOUBLE_BEDROOM);
+        hotel.addPersonToRoom(guest,RoomType.DOUBLE_BEDROOM);
+        assertEquals(guest, hotel.findIfGuestIsInRoom(RoomType.DOUBLE_BEDROOM));
+
+    }
+
+    @Test
+    public void canGetNameOfGuest(){
+        hotel.addRoom(bedroom);
+        hotel.findBedRoom(RoomType.DOUBLE_BEDROOM);
+        hotel.addPersonToRoom(guest,RoomType.DOUBLE_BEDROOM);
+        assertEquals("James", hotel.findIfGuestIsInRoomName(RoomType.DOUBLE_BEDROOM));
+
     }
 
 }

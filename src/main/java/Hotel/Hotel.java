@@ -49,7 +49,7 @@ public class Hotel {
     public BedRoom findBedRoom(RoomType roomtype) {
         BedRoom availableroom = null;
         for (BedRoom bedroom : bedRooms)
-            if (bedroom.getRoomType() == roomtype) {
+            if (bedroom.getRoomType() == roomtype  && bedroom.getOccupants() < bedroom.capacity) {
             availableroom = bedroom;
             }
         return availableroom;
@@ -65,6 +65,19 @@ public class Hotel {
     public void checkOut(RoomType roomtype){
         room = findBedRoom(roomtype);
         room.removePeopleFromRoom();
+    }
+
+    public Guest findIfGuestIsInRoom(RoomType roomtype){
+        room = findBedRoom(roomtype);
+        return room.roomOccupants();
+    }
+
+    public String findIfGuestIsInRoomName(RoomType roomtype){
+        room = findBedRoom(roomtype);
+        Guest guests = room.roomOccupants();
+        return guests.getName();
+
+
     }
 
 //    public

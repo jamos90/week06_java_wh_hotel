@@ -14,7 +14,7 @@ public class BedRoomTest {
 
     @Before
     public void setUp(){
-        bedRoom = new BedRoom(2, 34, 50, RoomType.DOUBLE_BEDROOM);
+        bedRoom = new BedRoom(1, 34, 50, RoomType.DOUBLE_BEDROOM);
         guest = new Guest("James",405);
         guest2 = new Guest("Jess",500);
     }
@@ -47,6 +47,13 @@ public class BedRoomTest {
     @Test
     public void canAddGuestToRoom(){
         bedRoom.addPeopleToRoom(guest);
+        assertEquals(1,bedRoom.getOccupants());
+    }
+
+    @Test
+    public void canNotGuestToRoomIfFull(){
+        bedRoom.addPeopleToRoom(guest);
+        bedRoom.addPeopleToRoom(guest2);
         assertEquals(1,bedRoom.getOccupants());
     }
 

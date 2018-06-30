@@ -24,10 +24,17 @@ public abstract class Room {
         return this.guestList.size();
     }
 
-    public void addPeopleToRoom(Guest guest) {
-        this.guestList.add(guest);
+    public String addPeopleToRoom(Guest guest) {
+        if (getOccupants() < this.capacity) {
+            this.guestList.add(guest);
+        } else {
+            return "This room is full";
+        }
+        return "This room is full";
 
     }
+
+
 
     public void removePeopleFromRoom() {
         this.guestList.clear();
