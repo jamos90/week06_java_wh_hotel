@@ -1,5 +1,6 @@
 import Hotel.Guest;
 import Rooms.BedRoom;
+import Rooms.ConferenceRoom;
 import Rooms.RoomType;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +14,7 @@ public class GuestTest {
     Guest guest2;
     BedRoom room;
     BedRoom room2;
+    ConferenceRoom conferenceroom;
 
     @Before
     public void setUP(){
@@ -20,6 +22,8 @@ public class GuestTest {
         guest2 = new Guest("James", 45);
         room = new BedRoom(30,45,50,RoomType.SINGLE_BEDROOM);
         room2 = new BedRoom(0,45,50,RoomType.SINGLE_BEDROOM);
+        conferenceroom = new ConferenceRoom(30,"The Stag Suite",250);
+
 
     }
 
@@ -36,20 +40,32 @@ public class GuestTest {
 
     @Test
     public void canPayForRoom(){
-        guest.paysForRoom(room);
+        guest.paysForBedRoom(room);
         assertEquals(300,guest.getWalletAmmount(),0.01);
     }
 
     @Test
-    public void cannotPayForRoom(){
-        guest2.paysForRoom(room);
+    public void cannotPayForBedRoom(){
+        guest2.paysForBedRoom(room);
         assertEquals(45,guest2.getWalletAmmount(),0.01);
     }
 
     @Test
-    public void cannotPayForRoomIfFull(){
-        guest.paysForRoom(room2);
+    public void cannotPayForBedRoomIfFull(){
+        guest.paysForBedRoom(room2);
         assertEquals(350, guest.getWalletAmmount(), 0.1);
+    }
+
+    @Test
+    public void canPayForConferenceRoom(){
+        guest.paysForConferenceRoom(conferenceroom);
+        assertEquals(100,guest.getWalletAmmount(),0.1);
+    }
+
+    @Test
+    public void cannotPayForConferenceRoomBooked(){
+        guest.paysForConferenceRoom(conferenceroom);
+        assertEquals(100,guest.getWalletAmmount(),0.1);
     }
 
 

@@ -1,6 +1,7 @@
 package Hotel;
 
 import Rooms.BedRoom;
+import Rooms.ConferenceRoom;
 
 public class Guest {
     private String name;
@@ -21,11 +22,16 @@ public class Guest {
         return this.wallet;
     }
 
-    public void paysForRoom(BedRoom room) {
+    public void paysForBedRoom(BedRoom room) {
         if (this.wallet >= room.getNightlyRate()&& !room.isFull()) {
             this.wallet -= room.getNightlyRate();
         }
+    }
 
+    public void paysForConferenceRoom(ConferenceRoom confroom){
+        if (this.wallet >= confroom.getDailyRate() && !confroom.isBooked();){
+            this.wallet -= confroom.getDailyRate();
+        }
     }
 
 

@@ -97,7 +97,7 @@ public class Hotel {
     }
 
     public void hotelTakesMoneyFromGuest(Guest guest, BedRoom room){
-         guest.paysForRoom(room);
+         guest.paysForBedRoom(room);
          this.till += room.getNightlyRate();
     }
 
