@@ -80,8 +80,8 @@ public class Hotel {
 
     }
 
-    public Room findEmptyRun(RoomType roomtype) {
-        Room emptyRoom = null;
+    public BedRoom findEmptyRun(RoomType roomtype) {
+        BedRoom emptyRoom = null;
         for (BedRoom bedroom : bedRooms)
             if (bedroom.getRoomType() == roomtype && bedroom.getOccupants() == 0) {
                 emptyRoom = bedroom;

@@ -22,7 +22,7 @@ public class HotelTest {
     public void setUp() {
         hotel = new Hotel(500,600);
         bedroom = new BedRoom(1,50, 50, RoomType.DOUBLE_BEDROOM);
-        bedroom2 = new BedRoom(3,34,40,RoomType.DOUBLE_BEDROOM);
+        bedroom2 = new BedRoom(3,34,40,RoomType.SINGLE_BEDROOM);
         bedroom3 = new BedRoom(2,70,70,RoomType.DOUBLE_BEDROOM);
         conferenceroom = new ConferenceRoom(50,"Confroom 1",200, true);
         conferenceroom2 = new ConferenceRoom(34,"Room2",300, false);
