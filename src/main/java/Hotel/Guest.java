@@ -1,5 +1,7 @@
 package Hotel;
 
+import Rooms.BedRoom;
+
 public class Guest {
     private String name;
     private double wallet;
@@ -18,6 +20,15 @@ public class Guest {
     public double getWalletAmmount() {
         return this.wallet;
     }
+
+    public void paysForRoom(BedRoom room) {
+        if (this.wallet >= room.getNightlyRate()&& !room.isFull()) {
+            this.wallet -= room.getNightlyRate();
+        }
+
+    }
+
+
 }
 
   

@@ -18,4 +18,5 @@ public class ConferenceRoom extends Hotel.Room {
     public int getDailyRate() {
         return dailyRate;
     }
+
 }

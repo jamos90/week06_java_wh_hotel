@@ -38,9 +38,12 @@ public class Hotel {
 
     }
 
-    public void addConferenceRoom(ConferenceRoom conferenceroom) {
-        this.conferenceRooms.add(conferenceroom);
+
+    public void addConferenceRoom(ConferenceRoom conferenceRoom) {
+        this.conferenceRooms.add(conferenceRoom);
+
     }
+
 
     public BedRoom getBedroom(BedRoom bedroom) {
         return this.bedRooms.get(0);
@@ -77,6 +80,16 @@ public class Hotel {
         Guest guests = room.roomOccupants();
         return guests.getName();
 
+
+    }
+
+    public Room findEmptyRun(RoomType roomtype) {
+        Room emptyRoom = null;
+        for (BedRoom bedroom : bedRooms)
+            if (bedroom.getRoomType() == roomtype && bedroom.getOccupants() == 0) {
+                emptyRoom = bedroom;
+            }
+        return emptyRoom;
 
     }
 

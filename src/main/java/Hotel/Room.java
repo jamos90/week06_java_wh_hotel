@@ -25,13 +25,20 @@ public abstract class Room {
     }
 
     public String addPeopleToRoom(Guest guest) {
-        if (getOccupants() < this.capacity) {
+       if (getOccupants() < this.capacity) {
             this.guestList.add(guest);
         } else {
             return "This room is full";
         }
         return "This room is full";
 
+    }
+
+    public Boolean isFull(){
+        if (getOccupants() == getCapacity()){
+            return true;
+        }
+        return false;
     }
 
 

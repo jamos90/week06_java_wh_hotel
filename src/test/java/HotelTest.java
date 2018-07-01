@@ -15,6 +15,7 @@ public class HotelTest {
     BedRoom bedroom2;
     BedRoom bedroom3;
     ConferenceRoom conferenceroom;
+    ConferenceRoom conferenceroom2;
     Guest guest;
 
     @Before
@@ -24,6 +25,7 @@ public class HotelTest {
         bedroom2 = new BedRoom(3,34,40,RoomType.DOUBLE_BEDROOM);
         bedroom3 = new BedRoom(2,70,70,RoomType.DOUBLE_BEDROOM);
         conferenceroom = new ConferenceRoom(50,"Confroom 1",200);
+        conferenceroom2 = new ConferenceRoom(34,"Room2",300);
         guest = new Guest("James",403);
 
 
@@ -99,6 +101,14 @@ public class HotelTest {
         hotel.addPersonToRoom(guest,RoomType.DOUBLE_BEDROOM);
         assertEquals("James", hotel.findIfGuestIsInRoomName(RoomType.DOUBLE_BEDROOM));
 
+    }
+
+    @Test
+    public void canCheckEmptyRooms(){
+        hotel.addRoom(bedroom);
+        hotel.addRoom(bedroom2);
+        hotel.addPersonToRoom(guest,RoomType.DOUBLE_BEDROOM);
+        assertEquals(bedroom, hotel.findEmptyRun(RoomType.DOUBLE_BEDROOM));
     }
 
 }
