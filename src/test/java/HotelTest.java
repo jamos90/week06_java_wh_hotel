@@ -20,12 +20,12 @@ public class HotelTest {
 
     @Before
     public void setUp() {
-        hotel = new Hotel(500);
+        hotel = new Hotel(500,600);
         bedroom = new BedRoom(1,50, 50, RoomType.DOUBLE_BEDROOM);
         bedroom2 = new BedRoom(3,34,40,RoomType.DOUBLE_BEDROOM);
         bedroom3 = new BedRoom(2,70,70,RoomType.DOUBLE_BEDROOM);
-        conferenceroom = new ConferenceRoom(50,"Confroom 1",200);
-        conferenceroom2 = new ConferenceRoom(34,"Room2",300);
+        conferenceroom = new ConferenceRoom(50,"Confroom 1",200, true);
+        conferenceroom2 = new ConferenceRoom(34,"Room2",300, false);
         guest = new Guest("James",403);
 
 
@@ -116,6 +116,19 @@ public class HotelTest {
         hotel.addRoom(bedroom);
         hotel.hotelTakesMoneyFromGuest(guest,bedroom);
         assertEquals(550, hotel.getTillAmmount(), 0.1 );
+    }
+
+
+    @Test
+    public void hotelCanTakeMoneyForConferences(){
+        hotel.addConferenceRoom(conferenceroom);
+        hotel.hotelTakesMoneyFromGuestConferencePayment(guest, conferenceroom);
+        assertEquals(800, hotel.getConferenceTillAmount(),0.1);
+    }
+
+    @Test
+    public void hotelHasTotalTakings(){
+        assertEquals(1100,hotel.getTotalTakings(),0.1);
     }
 
 }

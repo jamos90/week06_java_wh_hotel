@@ -12,21 +12,15 @@ public class Hotel {
     protected ArrayList<ConferenceRoom> conferenceRooms;
 //    protected ArrayList<> dinningRooms;
     protected Room room;
-    protected double till;
+    protected double bedroomTill;
+    protected double conferenceTill;
 
-    public Hotel(double till) {
+    public Hotel(double bedroomTill, double conferenceTill) {
         this.bedRooms = new ArrayList<>();
         this.conferenceRooms = new ArrayList<>();
-        this.till = till;
-
-
-
+        this.bedroomTill = bedroomTill;
+        this.conferenceTill = conferenceTill;
     }
-
-//
-//    public void addRoom(RoomType room) {
-//        this.BedRooms.add;
-//    }
 
     public int getBedroomCount() {
         return this.bedRooms.size();
@@ -98,20 +92,24 @@ public class Hotel {
 
     public void hotelTakesMoneyFromGuest(Guest guest, BedRoom room){
          guest.paysForBedRoom(room);
-         this.till += room.getNightlyRate();
+         this.bedroomTill += room.getNightlyRate();
+    }
+
+    public void hotelTakesMoneyFromGuestConferencePayment(Guest guest, ConferenceRoom room){
+        guest.paysForConferenceRoom(room);
+        this.conferenceTill += room.getDailyRate();
     }
 
     public double getTillAmmount() {
-        return this.till;
+        return this.bedroomTill;
     }
 
-//    public
+    public double getTotalTakings(){
+        return this.bedroomTill + this.conferenceTill;
+    }
 
 
-//    public void canCheckPeopleIntoRooms(Guest guest) {
-//        addPeopleToRoom(guest);
-////
-//    }
-
-
+    public double getConferenceTillAmount() {
+        return this.conferenceTill;
+    }
 }

@@ -15,6 +15,7 @@ public class GuestTest {
     BedRoom room;
     BedRoom room2;
     ConferenceRoom conferenceroom;
+    ConferenceRoom conferenceroom2;
 
     @Before
     public void setUP(){
@@ -22,7 +23,8 @@ public class GuestTest {
         guest2 = new Guest("James", 45);
         room = new BedRoom(30,45,50,RoomType.SINGLE_BEDROOM);
         room2 = new BedRoom(0,45,50,RoomType.SINGLE_BEDROOM);
-        conferenceroom = new ConferenceRoom(30,"The Stag Suite",250);
+        conferenceroom = new ConferenceRoom(30,"The Stag Suite",250, true);
+        conferenceroom2 = new ConferenceRoom(30,"The Doe Suite",250, false);
 
 
     }
@@ -65,8 +67,9 @@ public class GuestTest {
     @Test
     public void cannotPayForConferenceRoomBooked(){
         guest.paysForConferenceRoom(conferenceroom);
-        assertEquals(100,guest.getWalletAmmount(),0.1);
+        assertEquals(350,guest.getWalletAmmount(),0.1);
     }
+    
 
 
 }

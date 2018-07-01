@@ -29,7 +29,7 @@ public class Guest {
     }
 
     public void paysForConferenceRoom(ConferenceRoom confroom){
-        if (this.wallet >= confroom.getDailyRate() && !confroom.isBooked();){
+        if (this.wallet >= confroom.getDailyRate() && !confroom.isBooked()){
             this.wallet -= confroom.getDailyRate();
         }
     }
