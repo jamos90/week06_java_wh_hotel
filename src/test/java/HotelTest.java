@@ -20,7 +20,7 @@ public class HotelTest {
 
     @Before
     public void setUp() {
-        hotel = new Hotel();
+        hotel = new Hotel(500);
         bedroom = new BedRoom(1,50, 50, RoomType.DOUBLE_BEDROOM);
         bedroom2 = new BedRoom(3,34,40,RoomType.DOUBLE_BEDROOM);
         bedroom3 = new BedRoom(2,70,70,RoomType.DOUBLE_BEDROOM);
@@ -109,6 +109,13 @@ public class HotelTest {
         hotel.addRoom(bedroom2);
         hotel.addPersonToRoom(guest,RoomType.DOUBLE_BEDROOM);
         assertEquals(bedroom, hotel.findEmptyRun(RoomType.DOUBLE_BEDROOM));
+    }
+
+    @Test
+    public void hotelCanTakeMoney(){
+        hotel.addRoom(bedroom);
+        hotel.hotelTakesMoneyFromGuest(guest,bedroom);
+        assertEquals(550, hotel.getTillAmmount(), 0.1 );
     }
 
 }

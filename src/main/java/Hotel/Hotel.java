@@ -12,10 +12,13 @@ public class Hotel {
     protected ArrayList<ConferenceRoom> conferenceRooms;
 //    protected ArrayList<> dinningRooms;
     protected Room room;
+    protected double till;
 
-    public Hotel() {
+    public Hotel(double till) {
         this.bedRooms = new ArrayList<>();
         this.conferenceRooms = new ArrayList<>();
+        this.till = till;
+
 
 
     }
@@ -91,6 +94,15 @@ public class Hotel {
             }
         return emptyRoom;
 
+    }
+
+    public void hotelTakesMoneyFromGuest(Guest guest, BedRoom room){
+         guest.paysForRoom(room);
+         this.till += room.getNightlyRate();
+    }
+
+    public double getTillAmmount() {
+        return this.till;
     }
 
 //    public
